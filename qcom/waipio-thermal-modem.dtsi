@@ -7,7 +7,7 @@
 		modem {
 			qcom,instance-id = <QMI_MODEM_INST_ID>;
 
-			modem_lte_dsc: mmodem_lte_dsc_kr {
+			modem_lte_dsc: modem_lte_dsc_kr {
 				qcom,qmi-dev-name = "modem_lte_dsc";
 				#cooling-cells = <2>;
 			};
@@ -111,7 +111,7 @@
 		modem_usr {
 			qcom,instance-id = <QMI_MODEM_INST_ID>;
 
-			mmodem_lte_dsc {
+			modem_lte_dsc {
 				qcom,qmi-dev-name = "modem_lte_dsc";
 			};
 

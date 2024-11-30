@@ -1,5 +1,5 @@
 &mdss_mdp {
-	dsi_sy103_dsc_2544p_75hz_video: qcom,mdss_dsi_sy103_dsc_2544p_75hz_video {
+	dsi_sy103_dsc_2544p_90hz_video: qcom,mdss_dsi_sy103_dsc_2544p_90hz_video {
 		qcom,mdss-dsi-panel-name =
 			"sy103 amoled video mode panel with DSC";
 		qcom,mdss-dsi-panel-type = "dsi_video_mode";
@@ -21,10 +21,12 @@
 		qcom,mdss-dsi-mdp-trigger = "none";
 		qcom,mdss-dsi-reset-sequence = <1 10>, <0 10>, <1 20>;
 
+		qcom,mdss-dsi-wr-mem-start = <0x2c>;
+		qcom,mdss-dsi-wr-mem-continue = <0x3c>;
 		qcom,mdss-dsi-display-timings {
 			timing@0 {
 				cell-index = <0>;
-				qcom,mdss-dsi-panel-framerate = <75>;
+				qcom,mdss-dsi-panel-framerate = <90>;
 				qcom,mdss-dsi-panel-width = <2544>;
 				qcom,mdss-dsi-panel-height = <2544>;
 				qcom,mdss-dsi-h-front-porch = <64>;

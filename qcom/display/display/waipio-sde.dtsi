@@ -278,7 +278,7 @@
 
 &mdss_dsi_phy0 {
 	vdda-0p9-supply = <&L5B>;
-	qcom,dsi-pll-ssc-en;
+	/*qcom,dsi-pll-ssc-en; For disable SSC feature */
 	qcom,dsi-pll-ssc-mode = "down-spread";
 	pll_codes_region = <&dsi_pll_codes_data>;
 
@@ -286,6 +286,6 @@
 
 &mdss_dsi_phy1 {
 	vdda-0p9-supply = <&L5B>;
-	qcom,dsi-pll-ssc-en;
+	/*qcom,dsi-pll-ssc-en; For disable SSC feature */
 	qcom,dsi-pll-ssc-mode = "down-spread";
 };
