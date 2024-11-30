@@ -40,6 +40,8 @@ dtbo-$(CONFIG_ARCH_WAIPIO) += display/waipio-sde.dtbo \
         display/waipio-sde-display-pdx224-crossflash-overlay.dtbo
 endif
 
+endif
+
 always-y    := $(dtb-y) $(dtbo-y)
 subdir-y    := $(dts-dirs)
 clean-files    := *.dtb *.dtbo
