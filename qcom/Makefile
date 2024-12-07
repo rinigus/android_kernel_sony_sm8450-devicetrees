@@ -1,11 +1,3 @@
-# Based on Sony copyleft https://github.com/sonyxperiadev/kernel-copyleft-dts
-# and
-# Yodo Lineage port https://github.com/LineageOS/android_kernel_sony_sm8550-devicetrees
-
-add-overlays = $(foreach o,$1,$(foreach b,$2,$(eval $(basename $b)-$(basename $o)-dtbs = $b $o) $(basename $b)-$(basename $o).dtb))
-
-ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
-
 # select based on the target
 ifeq ($(CONFIG_MACH_SONY_PDX223),y)
 SOMC_TARGET_PRODUCT := pdx223
@@ -18,6 +10,8 @@ SOMC_TARGET_OPERATOR := generic
 SOMC_PLATFORM := nagara
 
 SOMC_PRODUCT_OPERATOR = $(SOMC_TARGET_PRODUCT)_$(SOMC_TARGET_OPERATOR)
+
+ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
 
 ifeq ($(SOMC_PRODUCT_OPERATOR),pdx223_generic)
 dtbo-$(CONFIG_ARCH_WAIPIO) += waipio-nagara-pdx223_generic-overlay.dtbo
@@ -236,7 +230,7 @@ dtb-$(CONFIG_ARCH_HOLI) += holi-rumi.dtb \
 	holi-mtp-usbc.dtb
 endif
 
-always-y	:= $(dtb-y)
-subdir-y	:= $(dts-dirs)
-subdir-y	+= audio camera cvp display mmrm video
-clean-files	:= *.dtb *.dtbo
+always-y    := $(dtb-y)
+subdir-y    := $(dts-dirs)
+subdir-y    += audio camera cvp display mmrm video
+clean-files := *.dtb *.dtbo
